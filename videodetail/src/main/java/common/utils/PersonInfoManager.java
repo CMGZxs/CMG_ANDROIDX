@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 
 
 import androidx.fragment.app.FragmentActivity;
@@ -46,7 +47,6 @@ public class PersonInfoManager {
 
     public String getANDROID_ID() {
 
-
         String ANDROID_ID= SPUtils.getInstance().getString("cmg_sdk_android_id","");
         if (TextUtils.isEmpty(ANDROID_ID)) {
             ANDROID_ID = Settings.System.getString(AppInit.getContext().getContentResolver(), Settings.System.ANDROID_ID);
@@ -55,9 +55,12 @@ public class PersonInfoManager {
                 ANDROID_ID = SPUtils.getInstance().getString(Constants.PUSH_TOKEN, "");
             }
             SPUtils.getInstance().put("cmg_sdk_android_id",ANDROID_ID);
+            Log.e("lee","获取AndroidID="+ANDROID_ID);
+        }else{
+            Log.e("lee","获取AndroidID_sp");
         }
 
-        ToastUtils.showLong("获取AndroidID="+ANDROID_ID);
+
         return ANDROID_ID;
     }
 
