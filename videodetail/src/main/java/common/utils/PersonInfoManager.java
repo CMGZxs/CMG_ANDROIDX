@@ -46,6 +46,7 @@ public class PersonInfoManager {
 
     public String getANDROID_ID() {
 
+
         String ANDROID_ID= SPUtils.getInstance().getString("cmg_sdk_android_id","");
         if (TextUtils.isEmpty(ANDROID_ID)) {
             ANDROID_ID = Settings.System.getString(AppInit.getContext().getContentResolver(), Settings.System.ANDROID_ID);
