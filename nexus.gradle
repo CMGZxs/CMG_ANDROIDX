@@ -68,12 +68,12 @@ uploadArchives { //新增 ，由于Android Studio gradle 支持maven插件，因
     repositories {
         mavenDeployer {
             //http://172.30.101.24:8081/repository/maven-releases/
-            snapshotRepository(url: "file:///Users/yan/.m2/repository/org") {
+            snapshotRepository(url: "file:////Users/dengjialuo/StudioProjects/aar") {
                 authentication(userName: NAME, password: PASSWORD)
             }
 
             //file:///Users/yan/.m2/repository/org
-            repository(url: "file:///Users/yan/.m2/repository/org") {
+            repository(url: "file:////Users/dengjialuo/StudioProjects/aar") {
                 authentication(userName: NAME, password: PASSWORD)
             }
 
